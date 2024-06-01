@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=M+PLUS+Rounded+1c&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RamenGo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section>
+    <div class="contain">
+      <h1>Hi, welcome</h1>
+    </div>
+  </section>
+    <div id="app">
+        <h1>RamenGo - Monte seu pedido</h1>
+        <form id="ramenForm">
+            <label for="brothSelect">Escolha o caldo:</label>
+            <select id="brothSelect" name="brothSelect"></select>
+            <label for="proteinSelect">Escolha a proteína:</label>
+            <select id="proteinSelect" name="proteinSelect"></select>
+            <button type="submit">Fazer Pedido</button>
+        </form>
+        <div id="orderStatus"></div>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>

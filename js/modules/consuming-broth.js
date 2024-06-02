@@ -3,9 +3,8 @@
 import { fetchBroths } from '../../api.js';
 
 class ConsumingBrothApi {
-  constructor(onSelect) {
+  constructor() {
     if (typeof document !== 'undefined') {
-      this.onSelect = onSelect;
       this.broths = [];
       this.init();
     }
@@ -46,7 +45,7 @@ class ConsumingBrothApi {
 
     div.append(img, h2, p1, p2);
     container.appendChild(div);
-
+    
     div.addEventListener('mouseover', () => {
       if (!div.classList.contains('active')) {
         img.src = broth.imageActive;
@@ -66,24 +65,20 @@ class ConsumingBrothApi {
 
   handleItemClick(div, img, broth) {
     const allContainers = document.querySelectorAll('.item-container');
-    const isActive = div.classList.contains('active');
-
-    if (isActive) {
-      this.deactivateItem(div, img);
-      localStorage.removeItem('selectedBroth');
-    } else {
-      allContainers.forEach(container => {
-        this.deactivateItem(container, container.querySelector('.broth-image'));
-      });
-      div.classList.add('active');
-      img.src = broth.imageActive;
-      this.onSelect && this.onSelect('broth', broth.name);
-      localStorage.setItem('selectedBroth', broth.name);
-    }
+  
+    allContainers.forEach(container => {
+      this.deactivateItem(container);
+    });
+  
+    div.classList.add('active');
+    img.src = broth.imageActive;
+    const event = new CustomEvent('brothSelected', { detail: broth });
+    document.dispatchEvent(event);
   }
 
-  deactivateItem(container, img) {
+  deactivateItem(container) {
     container.classList.remove('active');
+    const img = container.querySelector('.broth-image');
     if (img) {
       const name = img.getAttribute('data-name');
       const brothData = this.broths.find(b => b.name === name);

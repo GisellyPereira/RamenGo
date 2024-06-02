@@ -3,10 +3,8 @@
 import { fetchProteins } from '../../api.js';
 
 class ConsumingProteinApi {
-  constructor(onSelect) {
+  constructor() {
     if (typeof document !== 'undefined') {
-      this.onSelect = onSelect;
-      this.activeProtein = null;
       this.proteins = [];
       this.init();
     }
@@ -17,7 +15,6 @@ class ConsumingProteinApi {
       return;
     }
 
-    
     const initializedMarker = document.createElement('div');
     initializedMarker.id = 'proteinInitialized';
     document.body.appendChild(initializedMarker);
@@ -68,15 +65,15 @@ class ConsumingProteinApi {
 
   handleItemClick(div, img, protein) {
     const allContainers = document.querySelectorAll('.item-container');
-
+  
     allContainers.forEach(container => {
       this.deactivateItem(container);
     });
-
+  
     div.classList.add('selected');
     img.src = protein.imageActive;
-    this.onSelect && this.onSelect('protein', protein.name);
-    localStorage.setItem('selectedProtein', protein.name);
+    const event = new CustomEvent('proteinSelected', { detail: protein });
+    document.dispatchEvent(event);
   }
 
   deactivateItem(container) {

@@ -7,35 +7,19 @@ class SelectingOrder {
   constructor() {
     this.selectedItems = {
       broth: null,
-      protein: null
+      protein: null,
     };
 
     if (typeof document !== 'undefined') {
-      this.init();
+      this.initializeApis();
+      this.setupOrderButton();
+      this.setupEventListeners();
     }
-  }
-
-  async init() {
-    this.initializeApis();
-    this.retrieveSelectedItems();
-    this.setupOrderButton();
   }
 
   initializeApis() {
-    this.brothApi = new ConsumingBrothApi(this.handleSelection.bind(this));
-    this.proteinApi = new ConsumingProteinApi(this.handleSelection.bind(this));
-  }
-
-  retrieveSelectedItems() {
-    const selectedBroth = localStorage.getItem('selectedBroth');
-    const selectedProtein = localStorage.getItem('selectedProtein');
-
-    if (selectedBroth) {
-      this.selectedItems.broth = selectedBroth;
-    }
-    if (selectedProtein) {
-      this.selectedItems.protein = selectedProtein;
-    }
+    this.brothApi = new ConsumingBrothApi();
+    this.proteinApi = new ConsumingProteinApi();
   }
 
   setupOrderButton() {
@@ -48,18 +32,29 @@ class SelectingOrder {
     }
   }
 
-  handleSelection(type, name) {
-    this.selectedItems[type] = name;
-    localStorage.setItem(`selected${type.charAt(0).toUpperCase() + type.slice(1)}`, name);
+  setupEventListeners() {
+    document.addEventListener('brothSelected', (event) => {
+      const broth = event.detail;
+      this.selectedItems.broth = broth;
+    });
+
+    document.addEventListener('proteinSelected', (event) => {
+      const protein = event.detail;
+      this.selectedItems.protein = protein;
+    });
   }
 
   showOrderSummary() {
-    const { broth, protein } = this.selectedItems;
-    if (broth && protein) {
-      window.location.href = 'success.html';
-    } else {
-      alert('Por favor, selecione um caldo e uma proteína.');
-    }
+    setTimeout(() => {
+      const { broth, protein } = this.selectedItems;
+      if (broth && protein) {
+        localStorage.setItem('selectedBroth', broth.name);
+        localStorage.setItem('selectedProtein', protein.name);
+        window.location.href = 'success.html';
+      } else {
+        alert('Por favor, selecione um caldo e uma proteína.');
+      }
+    }, 100);
   }
 }
 

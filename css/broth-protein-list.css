@@ -134,9 +134,32 @@
     display: flex;
     justify-content: center;
     margin: 5rem 0;
-  }
+}
   
-  .place-order {
+.place-order {
+    padding: 18px 1rem;
+    background-color: var(--color-blue);
+    border: none;
+    border-radius: 50px;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20.79px;
+    letter-spacing: 1.78px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: background-color 0.2s;
+}
+
+.place-order:hover {
+    background-color: #1a20c5;
+}
+
+
+.place-order.disabled{
     padding: 18px 1rem;
     background-color: var(--color-gray);
     border: none;
@@ -152,4 +175,4 @@
     justify-content: center;
     gap: 20px;
     transition: background-color 0.2s;
-  }
+}

@@ -1,12 +1,14 @@
 /* eslint-disable no-undef */
+
 import { fetchBroths } from '../../api.js';
 
 class ConsumingBrothApi {
-  constructor() {
+  constructor(onSelect) {
     if (typeof document !== 'undefined') {
+      this.onSelect = onSelect;
+      this.broths = [];
       this.init();
     }
-    this.activeImage = null;
   }
 
   async init() {
@@ -21,8 +23,8 @@ class ConsumingBrothApi {
     const brothList = document.getElementById('brothList');
 
     try {
-      const broths = await fetchBroths();
-      broths.forEach((broth) => this.createBrothItem(broth, brothList));
+      this.broths = await fetchBroths();
+      this.broths.forEach(broth => this.createBrothItem(broth, brothList));
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Erro ao carregar os caldos:', error);
@@ -33,7 +35,11 @@ class ConsumingBrothApi {
     const div = document.createElement('div');
     div.classList.add('item-container');
 
-    const img = this.createBrothImage(broth.name);
+    const img = document.createElement('img');
+    img.src = broth.imageInactive;
+    img.setAttribute('data-name', broth.name);
+    img.classList.add('broth-image');
+
     const h2 = this.createElementWithText('h2', broth.name, 'broth-name');
     const p1 = this.createElementWithText('p', broth.description, 'broth-description');
     const p2 = this.createElementWithText('p', `US$ ${broth.price}`, 'broth-price');
@@ -41,17 +47,50 @@ class ConsumingBrothApi {
     div.append(img, h2, p1, p2);
     container.appendChild(div);
 
-    div.addEventListener('mouseover', () => this.changeImageOnHover(img, true));
-    div.addEventListener('mouseout', () => this.changeImageOnHover(img, false));
-    div.addEventListener('click', () => this.toggleActiveImage(img));
+    div.addEventListener('mouseover', () => {
+      if (!div.classList.contains('active')) {
+        img.src = broth.imageActive;
+      }
+    });
+
+    div.addEventListener('mouseout', () => {
+      if (!div.classList.contains('active')) {
+        img.src = broth.imageInactive;
+      }
+    });
+
+    div.addEventListener('click', () => {
+      this.handleItemClick(div, img, broth);
+    });
   }
 
-  createBrothImage(name) {
-    const img = document.createElement('img');
-    img.src = this.getBrothImageSrc(name);
-    img.setAttribute('data-name', name);
-    img.setAttribute('data-active', 'false');
-    return img;
+  handleItemClick(div, img, broth) {
+    const allContainers = document.querySelectorAll('.item-container');
+    const isActive = div.classList.contains('active');
+
+    if (isActive) {
+      this.deactivateItem(div, img);
+      localStorage.removeItem('selectedBroth');
+    } else {
+      allContainers.forEach(container => {
+        this.deactivateItem(container, container.querySelector('.broth-image'));
+      });
+      div.classList.add('active');
+      img.src = broth.imageActive;
+      this.onSelect && this.onSelect('broth', broth.name);
+      localStorage.setItem('selectedBroth', broth.name);
+    }
+  }
+
+  deactivateItem(container, img) {
+    container.classList.remove('active');
+    if (img) {
+      const name = img.getAttribute('data-name');
+      const brothData = this.broths.find(b => b.name === name);
+      if (brothData) {
+        img.src = brothData.imageInactive;
+      }
+    }
   }
 
   createElementWithText(tag, text, className) {
@@ -61,53 +100,6 @@ class ConsumingBrothApi {
       element.classList.add(className);
     }
     return element;
-  }
-
-  changeImageOnHover(img, isHover) {
-    const imgName = img.getAttribute('data-name');
-    const newImgSrc = isHover ? this.getBrothActiveImageSrc(imgName) : this.getBrothImageSrc(imgName);
-    if (img.getAttribute('data-active') === 'false') {
-      img.src = newImgSrc;
-    }
-  }
-
-  toggleActiveImage(img) {
-    const imgName = img.getAttribute('data-name');
-    const newImgSrc = this.getBrothActiveImageSrc(imgName);
-
-    if (this.activeImage) {
-      const prevImgName = this.activeImage.getAttribute('data-name');
-      this.activeImage.src = this.getBrothImageSrc(prevImgName);
-      this.activeImage.setAttribute('data-active', 'false');
-      this.activeImage.parentElement.classList.remove('active');
-    }
-
-    if (this.activeImage === img) {
-      this.activeImage = null;
-    } else {
-      img.src = newImgSrc;
-      img.setAttribute('data-active', 'true');
-      img.parentElement.classList.add('active');
-      this.activeImage = img;
-    }
-  }
-
-  getBrothImageSrc(name) {
-    const images = {
-      Salt: '../public/salt.png',
-      Shoyu: '../public/shoyu.png',
-      Miso: '../public/miso.png',
-    };
-    return images[name] || 'Imagem não encontrada';
-  }
-
-  getBrothActiveImageSrc(name) {
-    const activeImages = {
-      Salt: '../public/salt-active.png',
-      Shoyu: '../public/shoyu-active.png',
-      Miso: '../public/miso-active.png',
-    };
-    return activeImages[name] || 'Imagem não encontrada';
   }
 }
 

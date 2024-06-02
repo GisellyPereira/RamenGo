@@ -2,29 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=M+PLUS+Rounded+1c&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RamenGo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <section>
-    <div class="contain">
-      <h1>Hi, welcome</h1>
+  <section class="main-section">
+    <div class="content-wrapper">
+        <div class="description">
+          <p>Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!</p>
+          <button class="order-btn">ORDER NOW <img src="./public/arrow-active.png" /> </button>  
+        </div>
+        <img src="/public/logo-ramengo.png" class="company-logo" />
+      </div>
+     
     </div>
-  </section>
-    <div id="app">
-        <h1>RamenGo - Monte seu pedido</h1>
-        <form id="ramenForm">
-            <label for="brothSelect">Escolha o caldo:</label>
-            <select id="brothSelect" name="brothSelect"></select>
-            <label for="proteinSelect">Escolha a proteína:</label>
-            <select id="proteinSelect" name="proteinSelect"></select>
-            <button type="submit">Fazer Pedido</button>
-        </form>
-        <div id="orderStatus"></div>
-    </div>
+</section>
+<section>
+  <div class="content-main">
+    <h1>First things first: select your favorite broth.</h1>
+    <p>It will give the whole flavor on your ramen soup. </p>
+    <div id="brothList" class="brothList"></div>
+  </div>
+
+  <div class="content-main">
+    <h1>It’s time to choose (or not) your meat!</h1>
+    <p>Some people love, some don’t. We have options for all tastes.</p>
+    <div id="proteinList" class="proteinList"></div>
+  </div>
+
+  <div>
+   
+  
+    
+   
+    
+
+   
+  
+</section>
+
+
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

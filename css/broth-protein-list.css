@@ -1,0 +1,92 @@
+.content-main {
+    text-align: center;
+}
+
+.brothList,
+.proteinList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item-container {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 320px;
+    height: 316px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.item-container:hover {
+    transform: scale(1.03);
+    background-color: #1a20c5;
+}
+
+.item-container:hover .broth-name,
+.item-container:hover .protein-name,
+.item-container:hover .broth-description,
+.item-container:hover .protein-description{
+    color: #FFFFFF; 
+}
+
+.item-container:hover .broth-price,
+.item-container:hover .protein-price {
+    color: #FFC024; 
+}
+
+
+.item-container.active .broth-name,
+.item-container.active .protein-name,
+.item-container.active .broth-description,
+.item-container.active .protein-description {
+    color: #FFFFFF;
+}
+
+.item-container.active .broth-price,
+.item-container.active .protein-price {
+    color: #FFC024;
+}
+
+.item-container.active {
+    background-color: #1a20c5;
+}
+
+.item-container img {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+.broth-name,
+.protein-name {
+    font-size: 24px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 900 !important;
+    line-height: 35.28px;
+    color: #1a20c5;
+    margin-top: 1rem;
+    transition: color 0.3s ease-in-out; /* Adiciona transição suave */
+}
+
+.broth-description,
+.protein-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #000000;
+    margin-top: 1rem;
+}
+
+.broth-price,
+.protein-price {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 24px;
+    color: #FF4E42;
+    margin-top: 1rem;
+}

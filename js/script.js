@@ -1,3 +1,12 @@
-import ConsumingApi from './modules/consuming-api.js';
+/* eslint-disable no-undef */
+import ConsumingBrothApi from './modules/consuming-broth.js';
+import ConsumingProteinApi from './modules/consuming-protein.js';
 
-new ConsumingApi();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  new ConsumingBrothApi();
+});
+document.addEventListener('DOMContentLoaded', () => {
+  new ConsumingProteinApi();
+}); 

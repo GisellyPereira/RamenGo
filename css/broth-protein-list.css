@@ -1,7 +1,24 @@
+@import 'geral.css';
+
 .content-main {
     text-align: center;
 }
+.main-heading {
+    font-size: 32px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 900;
+    line-height: 47.52px;
+    color: var(--color-black);
+    margin-top: 5rem;
+}
+.sub-heading{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--color-black);
+    margin: 1rem 0 3rem 0;
 
+}
 .brothList,
 .proteinList {
     display: flex;
@@ -13,7 +30,6 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 320px;
     height: 316px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,19 +41,19 @@
 
 .item-container:hover {
     transform: scale(1.03);
-    background-color: #1a20c5;
+    background-color: var(--color-blue);
 }
 
 .item-container:hover .broth-name,
 .item-container:hover .protein-name,
 .item-container:hover .broth-description,
 .item-container:hover .protein-description{
-    color: #FFFFFF; 
+    color: var(--color-white); 
 }
 
 .item-container:hover .broth-price,
 .item-container:hover .protein-price {
-    color: #FFC024; 
+    color: var(--color-yellow); 
 }
 
 
@@ -45,16 +61,16 @@
 .item-container.active .protein-name,
 .item-container.active .broth-description,
 .item-container.active .protein-description {
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .item-container.active .broth-price,
 .item-container.active .protein-price {
-    color: #FFC024;
+    color: var(--color-yellow); 
 }
 
 .item-container.active {
-    background-color: #1a20c5;
+    background-color: var(--color-blue);
 }
 
 .item-container img {
@@ -68,7 +84,7 @@
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 900 !important;
     line-height: 35.28px;
-    color: #1a20c5;
+    color: var(--color-blue);
     margin-top: 1rem;
     transition: color 0.3s ease-in-out; /* Adiciona transição suave */
 }
@@ -78,7 +94,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
-    color: #000000;
+    color: var(--color-black);
     margin-top: 1rem;
 }
 
@@ -87,6 +103,6 @@
     font-size: 20px;
     font-weight: 900;
     line-height: 24px;
-    color: #FF4E42;
+    color: var(--color-red);
     margin-top: 1rem;
 }

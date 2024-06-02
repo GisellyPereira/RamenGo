@@ -72,7 +72,6 @@ class SelectingOrder {
       localStorage.setItem('selectedProtein', protein.name);
       window.location.href = 'success.html';
     } else {
-      // Substituir o alerta pelo toast deslizante manual
       const toast = document.createElement('div');
       toast.classList.add('toast');
       toast.textContent = 'Please, select a broth and a protein.';
@@ -89,7 +88,7 @@ class SelectingOrder {
 
       setTimeout(() => {
         document.body.removeChild(toast);
-      }, 5000); // 5 segundos
+      }, 5000);
     }
   }
 

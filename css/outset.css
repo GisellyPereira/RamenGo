@@ -1,6 +1,8 @@
 @import 'geral.css';
 
-
+.outset-section{
+    display: block;
+}
 .company-logo {
     position: absolute;
     top: 3%;
@@ -15,17 +17,18 @@
     background-image: url('../public/background.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    max-width: 100vw;
+    background-position: center center;
+    max-width: 100%;
     height: 90vh;
-
 }
+
+
 .description{
-    max-width: 200px;
     margin-top: 21rem;
     margin-left: -28rem;
 }
 .description p{
+    max-width: 200px;
     margin-top: 2rem;
     font-size: 16px;
     font-weight: 400;
@@ -53,4 +56,96 @@
 
 .order-btn:hover{
     background-color: #1a20c5;
+}
+
+
+/* MOBILE */
+
+.outset-section-mobile{
+    display: none;
+
+}
+.content-wrapper-mobile{
+    background-image: url('../public/background-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: 100%;
+    height: 80vh;
+    padding: 20px;
+    text-align: center;
+}
+.description-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.illustration-mobile{
+    max-width: 100%;
+    margin-top: 2rem;
+}
+.text-japanese-mobile{
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 56px;
+    color: var(--color-yellow);
+    margin-top: 2rem;
+    text-align: center;
+}
+.heading-mobile{
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 100px;
+    color: var(--color-white);
+    margin-top: 2rem;
+    text-align: center;
+}
+.description-text-mobile{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--color-white);
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 400px;
+}
+
+
+
+
+@media (max-width: 1650px) {
+    .description{
+        margin-left: -25rem;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        height: 100%;
+    }
+    .description{
+        margin-top: 20rem;
+        margin-left: -17rem;
+    }
+    .description p{
+        max-width: 160px;
+        font-size: 14px;
+    }
+    .order-btn{
+        margin-top: 1rem;
+        padding: 16px 1rem;
+        font-size: 12px;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .outset-section{
+         display: none;
+    }
+    .outset-section-mobile{
+        display: block;
+    }
 }

@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
     <title>Resumo do Pedido</title>
 </head>
 <body>
-    <h1>Pedido Escolhido</h1>
-    <p id="order-summary"></p>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const broth = localStorage.getItem('selectedBroth');
-            const protein = localStorage.getItem('selectedProtein');
-
-            if (broth && protein) {
-                document.getElementById('order-summary').textContent = `Caldo: ${broth}, Proteína: ${protein}`;
-            } else {
-                document.getElementById('order-summary').textContent = 'Nenhum pedido selecionado.';
-            }
-        });
-    </script>
+    <section class="order-summary">
+        <div class="order-details">
+            <img src="./public/logo-ramengo-red.png" class="company-logo" />
+            <img src="./public/ramen-chasu.png" class="ramen-image" />
+            <p class="order-title">Your Order:</p>
+            <p id="order-summary" class="order-description"></p>
+        </div>
+        <div class="order-status">
+            <img src="./public/bowing.png" class="bowing-image">
+            <p class="thank-you-message">どもありがとうございます。</p>
+            <h2 class="status-title">Your order is being prepared</h2>
+            <p class="status-description">Hold on, when you least expect you will be eating your rámen.</p>
+            <button class="new-order-button">PLACE NEW ORDER<img src="./public/arrow-active.png" class="arrow-icon" /></button>
+        </div>
+    </section>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>

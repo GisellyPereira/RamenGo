@@ -1,0 +1,85 @@
+@import 'geral.css';
+
+.order-summary {
+    display: flex;
+    max-width: 100%;
+}
+
+.order-details,
+.order-status {
+    max-width: 100%;
+    flex-basis: 50%; 
+    height: 100vh;
+}
+
+.order-details {
+    background-image: url('../public/background-blue.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.order-title{
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-white);
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.order-description{
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--color-yellow);
+    line-height: 47.52px;
+    margin-bottom: 20px;
+
+}
+.order-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.thank-you-message{
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-yellow);
+    line-height: 24px;
+}
+.status-title{
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--color-red);
+    line-height: 47.52px;
+}
+.status-description{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-black);
+    line-height: 24px;
+}
+.new-order-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 1rem;
+    background-color: var(--color-blue);
+    border: none;
+    border-radius: 50px;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20.79px;
+    letter-spacing: 1.78px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 2rem;
+}
+.new-order-button:hover {
+    background-color: #1a20c5;
+}

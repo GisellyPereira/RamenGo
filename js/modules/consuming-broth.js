@@ -24,6 +24,7 @@ class ConsumingBrothApi {
     try {
       this.broths = await fetchBroths();
       this.broths.forEach(broth => this.createBrothItem(broth, brothList));
+      document.dispatchEvent(new Event('brothListReady'));
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Erro ao carregar os caldos:', error);

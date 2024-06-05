@@ -1,8 +1,11 @@
 @import 'geral.css';
 
+
+
 .content-main {
     text-align: center;
 }
+
 .main-heading {
     font-size: 32px;
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -11,16 +14,17 @@
     color: var(--color-black);
     margin-top: 5rem;
 }
-.sub-heading{
+
+.sub-heading {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     color: var(--color-black);
     margin: 1rem 0 3rem 0;
-
 }
-.brothList,
-.proteinList {
+
+.proteinList,
+.brothList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -49,15 +53,14 @@
 .item-container:hover .broth-name,
 .item-container:hover .protein-name,
 .item-container:hover .broth-description,
-.item-container:hover .protein-description{
-    color: var(--color-white); 
+.item-container:hover .protein-description {
+    color: var(--color-white);
 }
 
 .item-container:hover .broth-price,
 .item-container:hover .protein-price {
-    color: var(--color-yellow); 
+    color: var(--color-yellow);
 }
-
 
 .item-container.active .broth-name,
 .item-container.active .protein-name,
@@ -68,27 +71,24 @@
 
 .item-container.active .broth-price,
 .item-container.active .protein-price {
-    color: var(--color-yellow); 
+    color: var(--color-yellow);
 }
 
 .item-container.active {
     background-color: var(--color-blue);
 }
 
-
 .item-container:hover .broth-price,
 .item-container:hover .protein-price {
-    color: var(--color-yellow); 
+    color: var(--color-yellow);
 }
 
-
 .item-container.selected .protein-name,
-.item-container.selected .protein-description{
+.item-container.selected .protein-description {
     color: var(--color-white);
 }
 
-
-.item-container.selected .protein-price{
+.item-container.selected .protein-price {
     color: var(--color-yellow);
 }
 
@@ -135,7 +135,7 @@
     justify-content: center;
     margin: 5rem 0;
 }
-  
+
 .place-order {
     padding: 18px 1rem;
     background-color: var(--color-blue);
@@ -158,8 +158,7 @@
     background-color: #1a20c5;
 }
 
-
-.place-order.disabled{
+.place-order.disabled {
     padding: 18px 1rem;
     background-color: var(--color-gray);
     border: none;
@@ -175,4 +174,48 @@
     justify-content: center;
     gap: 20px;
     transition: background-color 0.2s;
+}
+
+
+
+@media (max-width: 745px) {
+    .proteinList,
+    .brothList {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .item-container {
+        flex: 0 0 calc(100% - 40px);
+    }
+
+    .slide {
+        overflow: hidden;
+    }
+    
+    .dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .dot {
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        background-color: #E0DBBF;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.5s;
+    }
+    
+    .dot.active-dot {
+        background-color: var(--color-red);
+        width: 36px;
+        border-radius: 12px;
+    }
+
+   
 }

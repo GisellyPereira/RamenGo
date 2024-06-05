@@ -141,7 +141,7 @@
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 745px) {
     .outset-section{
          display: none;
     }

@@ -24,6 +24,7 @@ class ConsumingProteinApi {
     try {
       this.proteins = await fetchProteins();
       this.proteins.forEach(protein => this.createProteinItem(protein, proteinList));
+      document.dispatchEvent(new Event('proteinListReady'));
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Erro ao carregar as proteínas:', error);

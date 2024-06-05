@@ -23,31 +23,47 @@
 
   <section class="outset-section-mobile">
     <div class="content-wrapper-mobile">
-        <img src="/public/logo-ramengo.png" class="company-logo-mobile" alt="Company Logo" />
-        <div class="description-mobile">
-            <img src="./public/Ilustracao.png" class="illustration-mobile" alt="Illustration" />
-            <p class="text-japanese-mobile">ラーメン</p>
-            <h1 class="heading-mobile">GO!</h1>
-            <p class="description-text-mobile">
-                Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!
-            </p>
-        </div>
+      <img src="/public/logo-ramengo.png" class="company-logo-mobile" alt="Company Logo" />
+      <div class="description-mobile">
+        <img src="./public/Ilustracao.png" class="illustration-mobile" alt="Illustration" />
+        <p class="text-japanese-mobile">ラーメン</p>
+        <h1 class="heading-mobile">GO!</h1>
+        <p class="description-text-mobile">
+          Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour
+          combination!
+        </p>
+      </div>
     </div>
-</section>
-
+  </section>
 
 
   <section class="menu-contain">
     <div class="content-main">
       <h1 class="main-heading">First things first: select your favorite broth.</h1>
       <p class="sub-heading">It will give the whole flavor on your ramen soup. </p>
-      <div id="brothList" class="brothList"></div>
+      <div class="slide">
+        <div id="brothList" class="brothList broth"></div>
+        <div class="dots">
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
     </div>
 
     <div class="content-main">
       <h1 class="main-heading">It’s time to choose (or not) your meat!</h1>
       <p class="sub-heading">Some people love, some don’t. We have options for all tastes.</p>
-      <div id="proteinList" class="proteinList"></div>
+      <div class="slide">
+        <div id="proteinList" class="proteinList protein"></div>
+        <div class="dots">
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
     </div>
 
     <div class="btn-request">

@@ -1,7 +1,7 @@
 # RamenGo 🍜
 
 ## :book: Sobre o projeto
-Este é um teste para a empresa Red Ventures. O design do teste foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.com/design/uDdX536s8ylGc6TVSstATk/RamenGo-[2022]?node-id=0-1&t=2P7roo4nHJCxxc67-0).
+O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.com/design/uDdX536s8ylGc6TVSstATk/RamenGo-[2022]?node-id=0-1&t=2P7roo4nHJCxxc67-0).
 
 
 ## :computer: Tecnologias

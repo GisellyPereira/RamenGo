@@ -26,9 +26,7 @@ O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.c
 5. Após a instalação das dependências, observe o processo de compilação utilizando o comando `npm run build`.
 6. Por fim, inicie o servidor de desenvolvimento executando o comando `npm start`.
    
-## :mag: Resultado
-- Link do deploy: [RamenGo](https://main--fantastic-blini-2843b5.netlify.app/)
-  
+
 
 ![ramengo](https://github.com/GisellyPereira/RamenGo/assets/116305443/79d24606-cc52-4138-a236-9f8dd89ad03e)
 

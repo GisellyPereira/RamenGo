@@ -1,33 +1,40 @@
-# RamenGo 🍜
+# RamenGo
 
-## :book: Sobre o projeto
-O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.com/design/uDdX536s8ylGc6TVSstATk/RamenGo-[2022]?node-id=0-1&t=2P7roo4nHJCxxc67-0).
+Uma experiência de ramen que começa pelos sabores e termina com uma combinação feita por você. A vitrine apresenta três bowls em uma composição circular: ao rolar a página, os pratos giram e o sabor em destaque muda junto com sua descrição. Os controles também permitem escolher diretamente entre Shoyu, Miso e Yasai.
 
+![RamenGo — vitrine de sabores](docs/preview.png)
 
-## :computer: Tecnologias
-- [JavaScript](https://www.javascript.com/)
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Webpack](https://webpack.js.org/)
-- [Vite](https://vitejs.dev/)
-- [ESLint](https://eslint.org/)
+## A experiência
 
-## :sparkles: Funcionalidades Adicionais
-- Otimização de Desempenho: Implementação de compactação do JavaScript utilizando Webpack para garantir um carregamento rápido e eficiente da aplicação.
-- Validação Dinâmica: Integração de validação de entrada de dados, permitindo que o botão de submissão seja ativado somente após a seleção de um Broth ou Protein, assegurando a consistência dos dados fornecidos pelo usuário.
-- Aprimoramento de Desenvolvimento: Utilização do Vite, uma ferramenta de compilação ultrarrápida, para otimizar o desenvolvimento e melhorar a eficiência do código, resultando em uma experiência de usuário mais fluida.
-- Notificações Contextuais: Implementação de um sistema de notificações estilo toast para informar o usuário sobre a necessidade de selecionar itens antes de prosseguir para o resumo do pedido, melhorando a usabilidade e a comunicação com o usuário.
+- Três fotografias originais de bowls, com transparência, integradas à roda animada.
+- Movimento acompanhado pela rolagem, com interpolação suave e controles por teclado.
+- Montador com caldo, proteína e complementos; preço calculado a cada seleção.
+- Resumo acessível em dialog, com retorno à combinação.
+- Layout adaptado para celular e desktop; respeito à preferência por movimento reduzido.
 
-## :rocket: Como Rodar o Projeto
-1. Clone o repositório para sua máquina local.
-2. Navegue até a pasta do projeto utilizando o terminal.
-3. Verifique se está utilizando a última versão do Node.js.
-4. Execute o comando npm install para instalar as dependências necessárias.
-5. Após a instalação das dependências, observe o processo de compilação utilizando o comando `npm run build`.
-6. Por fim, inicie o servidor de desenvolvimento executando o comando `npm start`.
-   
+O cardápio e os valores são demonstrativos. A aplicação não realiza compras, pagamentos ou entregas. A prévia do bowl representa o estilo da proteína escolhida; não é uma renderização individual de cada complemento.
 
+## Desenvolvimento
 
-![ramengo](https://github.com/GisellyPereira/RamenGo/assets/116305443/79d24606-cc52-4138-a236-9f8dd89ad03e)
+JavaScript, HTML, CSS e Webpack. Requer Node.js 20 ou superior.
 
-<div align="center">Feito com 💜!</div>
+```sh
+npm ci
+npm start
+```
+
+A prévia abre em `http://localhost:3014`.
+
+```sh
+npm run lint
+npm test
+npm run build
+```
+
+O build completo, incluindo as imagens, fica em `dist/` e pode ser servido por qualquer hospedagem estática. Os testes verificam os totais das combinações e seleções parciais.
+
+## Organização
+
+`js/script.js` controla a vitrine e o montador. `js/menu.js` reúne os ingredientes e o cálculo de preços. `css/style.css` define o layout responsivo. `public/food/` contém as fotos usadas na experiência. Os módulos e ilustrações da versão anterior permanecem no histórico e nos arquivos legados; a experiência atual utiliza um cardápio local e não depende da antiga API externa.
+
+As imagens foram geradas com a ferramenta imagegen; os prompts e arquivos estão documentados em [docs/image-prompts.md](docs/image-prompts.md).

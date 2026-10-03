@@ -1,79 +1,28 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7e202b"><meta name="description" content="Explore os sabores do RamenGo e monte seu bowl com caldo, proteína e os seus complementos favoritos.">
+<title>RamenGo — Seu próximo bowl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-  <section class="outset-section">
-    <div class="content-wrapper">
-      <div class="description">
-        <p>Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour
-          combination!</p>
-        <button class="order-btn">ORDER NOW <img src="./public/arrow-active.png" /> </button>
-      </div>
-      <img src="/public/logo-ramengo.png" class="company-logo" />
-    </div>
-  </section>
-
-  <section class="outset-section-mobile">
-    <div class="content-wrapper-mobile">
-      <img src="/public/logo-ramengo.png" class="company-logo-mobile" alt="Company Logo" />
-      <div class="description-mobile">
-        <img src="./public/Ilustracao.png" class="illustration-mobile" alt="Illustration" />
-        <p class="text-japanese-mobile">ラーメン</p>
-        <h1 class="heading-mobile">GO!</h1>
-        <p class="description-text-mobile">
-          Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour
-          combination!
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="menu-contain">
-    <div class="content-main">
-      <h1 class="main-heading">First things first: select your favorite broth.</h1>
-      <p class="sub-heading">It will give the whole flavor on your ramen soup. </p>
-      <div class="slide">
-        <div id="brothList" class="brothList broth"></div>
-        <div class="dots">
-          <span class="dot active-dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="content-main">
-      <h1 class="main-heading">It’s time to choose (or not) your meat!</h1>
-      <p class="sub-heading">Some people love, some don’t. We have options for all tastes.</p>
-      <div class="slide">
-        <div id="proteinList" class="proteinList protein"></div>
-        <div class="dots">
-          <span class="dot active-dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="btn-request">
-      <button class="place-order disabled">PLACE MY ORDER <img /> </button>
-    </div>
-
-  </section>
-
-
-  <script type="module" src="./js/script.js"></script>
-</body>
-
-</html>
+<header class="header"><a class="brand" href="#inicio" aria-label="RamenGo início">ramen<span>go</span><small>ラーメン</small></a><nav aria-label="Navegação principal"><a href="#sabores">Os sabores</a><a href="#cozinha">Nossa cozinha</a><a class="nav-order" href="#montar">Monte seu bowl</a></nav></header>
+<main>
+<section class="experience" id="inicio" aria-label="Explore os sabores de ramen">
+<div class="stage" id="sabores">
+<div class="hero-copy"><p class="eyebrow">FEITO COM TEMPO. SERVIDO COM ALMA.</p><h1>Um bom ramen.<br>O seu <em>momento.</em></h1><p class="intro">Caldo intenso, noodles no ponto e combinações que abraçam. Encontre o seu favorito — ou crie um só seu.</p><a class="button" href="#montar">Monte seu bowl</a></div>
+<div class="food-scene"><div class="turntable" aria-hidden="true"></div><div class="orbit" id="orbit">
+<img class="bowl bowl-0" src="./public/food/shoyu.png" alt="Ramen shoyu com char siu, ovo e cebolinha" fetchpriority="high" width="1024" height="1024">
+<img class="bowl bowl-1" src="./public/food/miso.png" alt="Ramen miso com frango crocante e milho" width="1024" height="1024">
+<img class="bowl bowl-2" src="./public/food/yasai.png" alt="Ramen vegetal com shiitake, tofu e legumes" width="1024" height="1024">
+</div><span class="scene-label" aria-hidden="true">いただきます</span></div>
+<div class="flavor-copy" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="flavor-note">O CLÁSSICO DA CASA</p><h2 id="flavor-title">Shoyu &amp; char siu</h2><p id="flavor-description">Caldo de shoyu, porco braseado, ovo marinado e um toque de cebolinha.</p><span id="flavor-profile">Profundo · delicado · reconfortante</span></div>
+<div class="flavor-tabs" role="group" aria-label="Escolher sabor em destaque"><button data-flavor="0" aria-pressed="true">Shoyu</button><button data-flavor="1" aria-pressed="false">Miso</button><button data-flavor="2" aria-pressed="false">Yasai</button></div><p class="scroll-hint">Role para descobrir os sabores</p>
+</div></section>
+<section class="kitchen" id="cozinha"><div><p class="eyebrow">O QUE FAZ UM BOWL ESPECIAL</p><h2>O segredo está<br>no <em>cuidado.</em></h2></div><div class="kitchen-text"><p>Um caldo que ganha profundidade. Noodles que encontram a textura certa. Cada ingrediente tem seu lugar, e cada bowl conta uma história diferente.</p><div class="ingredients"><span>Caldo encorpado</span><span>Noodles delicados</span><span>Seu toque final</span></div></div></section>
+<section class="builder" id="montar"><div class="builder-heading"><p class="eyebrow">SUA COMBINAÇÃO FAVORITA</p><h2>Agora, do <em>seu jeito.</em></h2><p>Escolha a base, a proteína e os complementos. O resto é vontade de provar.</p></div><div class="builder-layout"><form id="bowl-form"><fieldset><legend>Qual vai ser o caldo?</legend><div class="options" id="broth-options"></div></fieldset><fieldset><legend>E a proteína?</legend><div class="options" id="protein-options"></div></fieldset><fieldset><legend>Um toque a mais</legend><div class="toppings" id="toppings"></div></fieldset></form><aside class="order-preview"><img id="preview-image" src="./public/food/shoyu.png" alt="Prévia ilustrativa do bowl escolhido" width="1024" height="1024" loading="lazy"><p class="eyebrow">SEU BOWL</p><h3 id="order-name">Escolha sua combinação</h3><p id="order-detail">Comece pelo caldo e pela proteína.</p><div class="order-total"><span>Total</span><strong id="order-price">R$ 0,00</strong></div><button class="button" id="finish-order" type="button" disabled>Revisar meu bowl</button><small>Experiência demonstrativa. Nenhuma compra é realizada.</small></aside></div></section>
+</main><footer><a class="brand" href="#inicio">ramen<span>go</span></a><p>Um bowl. Muitas possibilidades.</p><a href="#montar">Criar minha combinação</a></footer>
+<dialog id="order-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Fechar resumo">×</button><p class="eyebrow">COMBINAÇÃO PRONTA</p><h2 id="dialog-title">Seu próximo favorito.</h2><p id="dialog-summary"></p><p class="demo-note">Este é um pedido de demonstração, sem pagamento ou entrega.</p><button class="button" id="back-to-bowl">Voltar ao meu bowl</button></dialog>
+</body></html>

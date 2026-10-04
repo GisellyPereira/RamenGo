@@ -2,7 +2,7 @@
 
 Uma experiência interativa para explorar sabores e montar seu próprio ramen. Os pratos giram sobre uma composição de madeira conforme a página avança, enquanto o nome e a descrição acompanham o sabor em destaque.
 
-[Código do projeto](https://github.com/GisellyPereira/RamenGo)
+[Acessar o RamenGo](https://ramengo-lamen.netlify.app/) · [Código do projeto](https://github.com/GisellyPereira/RamenGo)
 
 ![Vitrine do RamenGo com pratos de ramen sobre uma composição de madeira](docs/ramengo-hero.png)
 

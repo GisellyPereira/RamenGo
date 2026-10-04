@@ -1,29 +1,42 @@
 # RamenGo
 
-Uma experiência de ramen que começa pelos sabores e termina com uma combinação feita por você. A vitrine apresenta três bowls em uma composição circular: ao rolar a página, os pratos giram e o sabor em destaque muda junto com sua descrição. Os controles também permitem escolher diretamente entre Shoyu, Miso e Yasai.
+Uma experiência interativa para explorar sabores e montar seu próprio ramen. Os pratos giram sobre uma composição de madeira conforme a página avança, enquanto o nome e a descrição acompanham o sabor em destaque.
 
-![RamenGo — vitrine de sabores](docs/preview.png)
+[Código do projeto](https://github.com/GisellyPereira/RamenGo)
 
-## A experiência
+![Vitrine do RamenGo com pratos de ramen sobre uma composição de madeira](docs/ramengo-hero.png)
 
-- Três fotografias originais de bowls, com transparência, integradas à roda animada.
-- Movimento acompanhado pela rolagem, com interpolação suave e controles por teclado.
-- Montador com caldo, proteína e complementos; preço calculado a cada seleção.
-- Resumo acessível em dialog, com retorno à combinação.
-- Layout adaptado para celular e desktop; respeito à preferência por movimento reduzido.
+## Monte seu ramen
 
-O cardápio e os valores são demonstrativos. A aplicação não realiza compras, pagamentos ou entregas. A prévia do bowl representa o estilo da proteína escolhida; não é uma renderização individual de cada complemento.
+Escolha entre três caldos, três proteínas e quatro adicionais. O montador apresenta uma fotografia específica para cada seleção, com os ingredientes escolhidos dentro do bowl e o preço atualizado em tempo real.
 
-## Desenvolvimento
+![Montador do RamenGo com todos os adicionais selecionados](docs/ramengo-montador.png)
 
-JavaScript, HTML, CSS e Webpack. Requer Node.js 20 ou superior.
+- **144 variações visuais:** 9 combinações de caldo e proteína × 16 seleções de adicionais.
+- **Caldos:** Shoyu, Miso e Vegetal.
+- **Proteínas:** Char siu, Karaage e Tofu.
+- **Adicionais:** ovo marinado, nori, shiitake e milho.
+- Resumo da combinação em uma janela acessível, com opção de voltar e ajustar os ingredientes.
+- Navegação fixa, layout responsivo e respeito à preferência por movimento reduzido.
+
+O cardápio e os valores são demonstrativos. A aplicação não realiza compras, pagamentos ou entregas.
+
+## Tecnologias
+
+JavaScript, HTML, CSS e Webpack. A animação utiliza `requestAnimationFrame`; o cardápio funciona localmente, sem depender de uma API externa.
+
+## Executar localmente
+
+Requer Node.js 20 ou superior.
 
 ```sh
 npm ci
 npm start
 ```
 
-A prévia abre em `http://localhost:3014`.
+Abra [http://localhost:3014](http://localhost:3014).
+
+## Verificar e gerar o build
 
 ```sh
 npm run lint
@@ -31,10 +44,22 @@ npm test
 npm run build
 ```
 
-O build completo, incluindo as imagens, fica em `dist/` e pode ser servido por qualquer hospedagem estática. Os testes verificam os totais das combinações e seleções parciais.
+Os testes verificam os preços, as seleções parciais e os arquivos das 144 fotografias. O build, incluindo as imagens, fica em `dist/` e pode ser servido por uma hospedagem estática.
+
+## Publicação no Netlify
+
+O arquivo `netlify.toml` configura o build com `npm run build` e a publicação da pasta `dist`. Em um deploy manual, execute o build e envie o conteúdo de `dist`, incluindo `public/` e o arquivo `bundle.*.js`.
+
+A pasta raiz contém o template de desenvolvimento; publicar apenas seu `index.html` deixa a página sem os estilos e as interações gerados pelo Webpack.
 
 ## Organização
 
-`js/script.js` controla a vitrine e o montador. `js/menu.js` reúne os ingredientes e o cálculo de preços. `css/style.css` define o layout responsivo. `public/food/` contém as fotos usadas na experiência. Os módulos e ilustrações da versão anterior permanecem no histórico e nos arquivos legados; a experiência atual utiliza um cardápio local e não depende da antiga API externa.
+- `js/script.js`: vitrine animada, seleção de ingredientes e resumo.
+- `js/menu.js`: cardápio, preços e correspondência entre seleção e fotografia.
+- `css/style.css`: composição e estilos responsivos.
+- `public/food/`: fotografias dos pratos, variações e adicionais.
+- `tests/menu.test.js`: verificação das combinações.
 
-As imagens foram geradas com a ferramenta imagegen; os prompts e arquivos estão documentados em [docs/image-prompts.md](docs/image-prompts.md).
+## Imagens
+
+As capturas acima mostram a interface real do projeto. As fotografias dos bowls e a madeira foram geradas com imagegen. Os prompts e arquivos estão registrados em [imagens da vitrine](docs/image-prompts.md), [combinações e adicionais](docs/combination-prompts.md) e [variações dos pratos](docs/variant-prompts.md).

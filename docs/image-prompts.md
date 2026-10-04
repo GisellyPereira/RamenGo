@@ -13,3 +13,7 @@ Use case: product-mockup. ONE photorealistic top-down perfectly circular ivory c
 ## Yasai — public/food/yasai.png
 
 Use case: product-mockup. ONE beautiful photorealistic top-down perfectly circular ivory ceramic ramen bowl isolated on genuinely transparent background for a professional restaurant website food carousel. Vegan yasai ramen: clear amber vegetable broth, curly noodles, seared golden tofu cubes, shiitake mushrooms, bok choy, fine purple cabbage, carrot ribbons, scallions, sesame. No eggs or meat. Centered orthographic overhead view, full rim visible with generous transparent margin, appetizing high-end editorial food photograph with soft studio light. No text, utensils, table, watermark.
+
+## Madeira — public/food/walnut-ring.png
+
+Ferramenta imagegen integrada. Prompt: Use case: product-mockup. Website asset: a single large perfectly circular ring-shaped wooden serving board, a wide annulus with a clean open transparent circular center. Straight overhead orthographic product photography, natural richly figured walnut wood with realistic long organic grain, warm medium brown, matte oiled surface, subtle beveled edges, thickness visible only as a faint soft shadow. Ring outer diameter takes 90 percent of square frame, center hole diameter 66 percent of outer diameter. No bowls, no food, no lettering, no props, no background. Both center hole and outer background are genuinely transparent. High-end tabletop photography, soft light.
